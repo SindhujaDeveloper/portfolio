@@ -30,7 +30,6 @@ const PortfolioPage = () => {
           <h1 className="position-absolute text-uppercase text-primary">
             My Portfolio
           </h1>
-          
         </div>
         <div className="row">
           <div className="col-12 text-center mb-2">
