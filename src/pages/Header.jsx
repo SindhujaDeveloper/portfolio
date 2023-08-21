@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import VideoModal from "../components/VideoModal";
-import profileImage from "../img/profile.jpg";
+import profileImage from "../img/profile_image.png";
 import TypewriterComponent from "typewriter-effect";
 
 const Header = () => {
@@ -28,19 +28,19 @@ const Header = () => {
               className="display-3 text-uppercase text-primary mb-2"
               style={{ WebkitTextStroke: "2px #ffffff" }}
             >
-              Kate Winslet
+              Sindhuja
             </h1>
             <h1 className="typed-text-output d-inline font-weight-lighter text-white">
               <TypewriterComponent
                 onInit={(typewriter) => {
                   typewriter
                     .typeString(
-                      "Web Designer, Web Developer, Front End Developer, Apps Designer,Apps Developer"
+                      "Web Developer, Front End Developer, Backend Developer"
                     )
                     .pauseFor(1000)
                     .deleteAll()
                     .typeString(
-                      "Web Designer, Web Developer, Front End Developer, Apps Designer,Apps Developer"
+                      "Web Developer, Front End Developer, Backend Developer"
                     )
                     .start();
                 }}

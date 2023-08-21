@@ -25,7 +25,7 @@ const NavBar = () => {
     >
       <Navbar.Brand href="index.html" className="navbar-brand ml-lg-3">
         <h1 className="m-0 display-5">
-          <span className="text-primary">Free</span>Folio
+          <span className="text-primary">Sindhuja's</span> Portfolio
         </h1>
       </Navbar.Brand>
       <Navbar.Toggle

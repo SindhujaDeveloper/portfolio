@@ -51,9 +51,9 @@ const Footer = () => {
           . All Rights Reserved. Designed by{" "}
           <a
             className="text-white font-weight-bold"
-            href="https://htmlcodex.com"
+            href="https://portfolioofsindhuja.com"
           >
-            HTML Codex
+            Sindhuja
           </a>
         </p>
       </Container>

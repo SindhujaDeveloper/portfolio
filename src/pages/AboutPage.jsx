@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import aboutImage from "../img/about.jpg";
+import aboutImage from "../img/profile_image.png";
 
 const AboutPage = () => {
   return (
@@ -26,37 +26,37 @@ const AboutPage = () => {
             <Row className="mb-3">
               <Col sm={6} py={5}>
                 <h6>
-                  Name: <span className="text-secondary">Kate Winslet</span>
+                  Name: <span className="text-secondary">Sindhuja</span>
                 </h6>
               </Col>
               <Col sm={6} py={5}>
                 <h6>
-                  Birthday: <span className="text-secondary">1 April 1990</span>
+                  Birthday: <span className="text-secondary">14 January 2000</span>
                 </h6>
               </Col>
               <Col sm={6} py={2}>
                 <h6>
-                  Degree: <span className="text-secondary">Master</span>
+                  Degree: <span className="text-secondary">B.E</span>
                 </h6>
               </Col>
               <Col sm={6} py={2}>
                 <h6>
-                  Experience: <span className="text-secondary">10 Years</span>
+                  Experience: <span className="text-secondary">2.5 Years</span>
                 </h6>
               </Col>
               <Col sm={6} py={2}>
                 <h6>
-                  Phone: <span className="text-secondary">+012 345 6789</span>
+                  Phone: <span className="text-secondary">+91 7868049366</span>
                 </h6>
               </Col>
               <Col sm={6} py={2}>
                 <h6>
-                  Email: <span className="text-secondary">info@example.com</span>
+                  Email: <span className="text-secondary">crazydeveloper.p@gmail.com</span>
                 </h6>
               </Col>
               <Col sm={6} py={2}>
                 <h6>
-                  Address: <span className="text-secondary">123 Street, New York, USA</span>
+                  Address: <span className="text-secondary">123 Street, Coimbatore, Tamilnadu</span>
                 </h6>
               </Col>
               <Col sm={6} py={2}>

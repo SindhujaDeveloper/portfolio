@@ -25,10 +25,10 @@ const QualificationPage = () => {
                   className="far fa-dot-circle text-primary position-absolute"
                   style={{ top: 2, left: "-32px" }}
                 />
-                <h5 className="font-weight-bold mb-1">Master In CSE</h5>
+                <h5 className="font-weight-bold mb-1">Bachelor's In CSE</h5>
                 <p className="mb-2">
-                  <strong>Cambridge University</strong> |{" "}
-                  <small>2000 - 2050</small>
+                  <strong>Adithya Institute</strong> |{" "}
+                  <small>2017 - 2021</small>
                 </p>
                 <p>
                   Tempor eos dolore amet tempor dolor tempor. Dolore ea magna
@@ -42,10 +42,12 @@ const QualificationPage = () => {
                   className="far fa-dot-circle text-primary position-absolute"
                   style={{ top: 2, left: "-32px" }}
                 />
-                <h5 className="font-weight-bold mb-1">Master In CSE</h5>
+                <h5 className="font-weight-bold mb-1">
+                  Bio-Maths - 12th Standard
+                </h5>
                 <p className="mb-2">
-                  <strong>Cambridge University</strong> |{" "}
-                  <small>2000 - 2050</small>
+                  <strong>Bharathi Higher Secondary School</strong> |{" "}
+                  <small>2016 - 2017</small>
                 </p>
                 <p>
                   Tempor eos dolore amet tempor dolor tempor. Dolore ea magna
@@ -54,15 +56,15 @@ const QualificationPage = () => {
                   lorem diam
                 </p>
               </div>
-              <div className="position-relative mb-4">
+              {/* <div className="position-relative mb-4">
                 <i
                   className="far fa-dot-circle text-primary position-absolute"
                   style={{ top: 2, left: "-32px" }}
                 />
-                <h5 className="font-weight-bold mb-1">Master In CSE</h5>
+                <h5 className="font-weight-bold mb-1">10th Standard</h5>
                 <p className="mb-2">
-                  <strong>Cambridge University</strong> |{" "}
-                  <small>2000 - 2050</small>
+                  <strong>Bharathi Higher Secondary School</strong> |{" "}
+                  <small>2014 - 2015</small>
                 </p>
                 <p>
                   Tempor eos dolore amet tempor dolor tempor. Dolore ea magna
@@ -70,7 +72,7 @@ const QualificationPage = () => {
                   kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
                   lorem diam
                 </p>
-              </div>
+              </div> */}
               {/* Repeat for other education entries */}
             </div>
           </Col>
@@ -82,9 +84,9 @@ const QualificationPage = () => {
                   className="far fa-dot-circle text-primary position-absolute"
                   style={{ top: 2, left: "-32px" }}
                 />
-                <h5 className="font-weight-bold mb-1">Web Designer</h5>
+                <h5 className="font-weight-bold mb-1">Junior Developer</h5>
                 <p className="mb-2">
-                  <strong>Soft Company</strong> | <small>2000 - 2050</small>
+                  <strong>Towno</strong> | <small>April 2017 - December 2017</small>
                 </p>
                 <p>
                   Tempor eos dolore amet tempor dolor tempor. Dolore ea magna
@@ -94,6 +96,22 @@ const QualificationPage = () => {
                 </p>
               </div>
               <div className="position-relative mb-4">
+                <i
+                  className="far fa-dot-circle text-primary position-absolute"
+                  style={{ top: 2, left: "-32px" }}
+                />
+                <h5 className="font-weight-bold mb-1">Software Trainee</h5>
+                <p className="mb-2">
+                  <strong>Aximsoft India Pvt Ltd</strong> | <small>December 2017 - now</small>
+                </p>
+                <p>
+                  Tempor eos dolore amet tempor dolor tempor. Dolore ea magna
+                  sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem
+                  kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
+                  lorem diam
+                </p>
+              </div>
+              {/* <div className="position-relative mb-4">
                 <i
                   className="far fa-dot-circle text-primary position-absolute"
                   style={{ top: 2, left: "-32px" }}
@@ -108,23 +126,7 @@ const QualificationPage = () => {
                   kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
                   lorem diam
                 </p>
-              </div>
-              <div className="position-relative mb-4">
-                <i
-                  className="far fa-dot-circle text-primary position-absolute"
-                  style={{ top: 2, left: "-32px" }}
-                />
-                <h5 className="font-weight-bold mb-1">Web Designer</h5>
-                <p className="mb-2">
-                  <strong>Soft Company</strong> | <small>2000 - 2050</small>
-                </p>
-                <p>
-                  Tempor eos dolore amet tempor dolor tempor. Dolore ea magna
-                  sit amet dolor eirmod. Eos ipsum est tempor dolor. Clita lorem
-                  kasd sed ea lorem diam ea lorem eirmod duo sit ipsum stet
-                  lorem diam
-                </p>
-              </div>
+              </div> */}
               {/* Repeat for other experience entries */}
             </div>
           </Col>
