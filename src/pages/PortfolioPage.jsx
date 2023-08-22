@@ -9,12 +9,16 @@ import portfolioItem6 from "../img/portfolio-6.jpg";
 
 const PortfolioPage = () => {
   const portfolioItems = [
-    { image: portfolioItem1, filter: "first" },
-    { image: portfolioItem2, filter: "second" },
-    { image: portfolioItem3, filter: "third" },
-    { image: portfolioItem4, filter: "first" },
-    { image: portfolioItem5, filter: "second" },
-    { image: portfolioItem6, filter: "third" },
+    {
+      image: portfolioItem1,
+      filter: "first",
+      url: "https://coffeeshop-pns.netlify.app/",
+    },
+    { image: portfolioItem2, filter: "second", url: "" },
+    { image: portfolioItem3, filter: "third", url: "" },
+    { image: portfolioItem4, filter: "first", url: "" },
+    { image: portfolioItem5, filter: "second", url: "" },
+    { image: portfolioItem6, filter: "third", url: "" },
   ];
 
   return (
@@ -79,7 +83,7 @@ const PortfolioPage = () => {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href={item.image}
+                    href={item.url}
                     data-lightbox="portfolio"
                   >
                     <i
