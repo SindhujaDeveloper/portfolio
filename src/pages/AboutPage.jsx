@@ -54,7 +54,15 @@ const AboutPage = () => {
               </Col>
               <Col sm={6} py={2}>
                 <h6>
-                  Phone: <span className="text-secondary">+91 7868049366</span>
+                  Phone:{" "}
+                  <a
+                    href="tel:+917868049366"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-secondary"
+                  >
+                    +91 7868049366
+                  </a>
                 </h6>
               </Col>
               <Col sm={6} py={2}>
@@ -68,9 +76,14 @@ const AboutPage = () => {
               <Col sm={6} py={2}>
                 <h6>
                   Address:{" "}
-                  <span className="text-secondary">
+                  <a
+                    className="text-secondary"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.google.com/maps/place/Coimbatore,+Tamil+Nadu/@11.0139578,76.8848326,12z/data=!3m1!4b1!4m6!3m5!1s0x3ba859af2f971cb5:0x2fc1c81e183ed282!8m2!3d11.0168445!4d76.9558321!16zL20vMDE5ZmM0?entry=ttu"
+                  >
                     123 Street, Coimbatore, Tamilnadu
-                  </span>
+                  </a>
                 </h6>
               </Col>
               <Col sm={6} py={2}>

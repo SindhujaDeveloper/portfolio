@@ -61,7 +61,7 @@ const Footer = () => {
           All Rights Reserved. Designed by{" "}
           <a
             className="text-white font-weight-bold"
-            href="https://portfolioofsindhuja.com"
+            href="https://sindhujadeveloperportfolio.netlify.app"
           >
             © Sindhuja
           </a>
