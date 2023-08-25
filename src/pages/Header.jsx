@@ -4,6 +4,8 @@ import VideoModal from "../components/VideoModal";
 import profileImage from "../img/profile_image.png";
 import TypewriterComponent from "typewriter-effect";
 
+import ExamplePdf from "../img/sindhuja-resume-updated.pdf";
+
 const Header = () => {
   const [videoModal, setVideoModal] = useState(false);
 
@@ -47,9 +49,17 @@ const Header = () => {
               />
             </h1>
             <div className="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-              <Button variant="outline-light" className="mr-5">
-                Download CV
-              </Button>
+              <a
+                href={ExamplePdf}
+                download="Sindhuja's CV"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button variant="outline-light" className="mr-5">
+                  Download CV
+                </Button>
+              </a>
+
               <Button
                 type="button"
                 className="btn-play"

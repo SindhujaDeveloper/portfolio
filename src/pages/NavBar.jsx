@@ -73,7 +73,7 @@ const NavBar = () => {
           >
             Skill
           </Nav.Link>
-          <Nav.Link
+          {/* <Nav.Link
             href="#service"
             className={`nav-item nav-link ${
               activeNavItem === "#service" ? "active" : ""
@@ -81,7 +81,7 @@ const NavBar = () => {
             onClick={() => handleNavItemClick("#service")}
           >
             Service
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link
             href="#portfolio"
             className={`nav-item nav-link ${
@@ -91,7 +91,7 @@ const NavBar = () => {
           >
             Portfolio
           </Nav.Link>
-          <Nav.Link
+          {/* <Nav.Link
             href="#testimonial"
             className={`nav-item nav-link ${
               activeNavItem === "#testimonial" ? "active" : ""
@@ -108,7 +108,7 @@ const NavBar = () => {
             onClick={() => handleNavItemClick("#blog")}
           >
             Blog
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link
             href="#contact"
             className={`nav-item nav-link ${
@@ -121,7 +121,7 @@ const NavBar = () => {
           {/* Repeat similar Nav.Link components for other menu items */}
         </Nav>
         <Button
-          href=""
+          href="mailto:crazydeveloper.p@gmail.com?subject=Hiring Request"
           variant="outline-primary"
           className="btn d-none d-lg-block"
         >
