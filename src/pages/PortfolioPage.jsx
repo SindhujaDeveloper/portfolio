@@ -3,7 +3,7 @@ import { Container, Col } from "react-bootstrap";
 import portfolioItem1 from "../img/portfolio-1.png";
 import portfolioItem2 from "../img/portfolio-2.png";
 import portfolioItem3 from "../img/portfolio-3.png";
-// import portfolioItem4 from "../img/portfolio-4.jpg";
+import portfolioItem4 from "../img/portfolio-4.png";
 // import portfolioItem5 from "../img/portfolio-5.jpg";
 // import portfolioItem6 from "../img/portfolio-6.jpg";
 
@@ -24,7 +24,11 @@ const PortfolioPage = () => {
       filter: "third",
       url: "https://primespot-72d6b.web.app/",
     },
-    // { image: portfolioItem4, filter: "first", url: "" },
+    {
+      image: portfolioItem4,
+      filter: "first",
+      url: "https://2048-new-game.netlify.app/",
+    },
     // { image: portfolioItem5, filter: "second", url: "" },
     // { image: portfolioItem6, filter: "third", url: "" },
   ];
