@@ -27,7 +27,7 @@ const PortfolioPage = () => {
     {
       image: portfolioItem4,
       filter: "first",
-      url: "https://2048-new-game.netlify.app/",
+      url: "https://2048-new-game.vercel.app/",
     },
     // { image: portfolioItem5, filter: "second", url: "" },
     // { image: portfolioItem6, filter: "third", url: "" },
