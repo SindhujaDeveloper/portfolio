@@ -4,7 +4,7 @@ import portfolioItem1 from "../img/portfolio-1.png";
 import portfolioItem2 from "../img/portfolio-2.png";
 import portfolioItem3 from "../img/portfolio-3.png";
 import portfolioItem4 from "../img/portfolio-4.png";
-import portfolioItem5 from "../img/portfolio-5.jpg";
+import portfolioItem5 from "../img/portfolio-2.jpg";
 // import portfolioItem6 from "../img/portfolio-6.jpg";
 
 const PortfolioPage = () => {
