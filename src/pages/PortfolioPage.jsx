@@ -5,7 +5,7 @@ import portfolioItem2 from "../img/portfolio-2.png";
 import portfolioItem3 from "../img/portfolio-3.png";
 import portfolioItem4 from "../img/portfolio-4.png";
 import portfolioItem5 from "../img/portfolio-2.jpg";
-// import portfolioItem6 from "../img/portfolio-6.jpg";
+import portfolioItem6 from "../img/portfolio-6.jpg";
 
 const PortfolioPage = () => {
   const portfolioItems = [
@@ -34,7 +34,7 @@ const PortfolioPage = () => {
       filter: "second",
       url: "https://online-exam-system-public.netlify.app/",
     },
-    // { image: portfolioItem5, filter: "second", url: "" },
+    { image: portfolioItem6, filter: "third", url: "https://openai-funny-chatbot.netlify.app/" },
     // { image: portfolioItem6, filter: "third", url: "" },
   ];
 
