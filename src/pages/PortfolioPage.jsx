@@ -15,16 +15,6 @@ const PortfolioPage = () => {
       url: "https://coffeeshop-pns.netlify.app/",
     },
     {
-      image: portfolioItem2,
-      filter: "second",
-      url: "https://primespot-tech.web.app/",
-    },
-    {
-      image: portfolioItem3,
-      filter: "third",
-      url: "https://primespot-72d6b.web.app/",
-    },
-    {
       image: portfolioItem4,
       filter: "first",
       url: "https://2048-new-game.netlify.app/",
@@ -34,8 +24,24 @@ const PortfolioPage = () => {
       filter: "second",
       url: "https://online-exam-system-public.netlify.app/",
     },
-    { image: portfolioItem6, filter: "third", url: "https://openai-funny-chatbot.netlify.app/" },
-    // { image: portfolioItem6, filter: "third", url: "" },
+    {
+      image: portfolioItem2,
+      filter: "second",
+      url: "https://primespot-tech.web.app/",
+    },
+    {
+      image: portfolioItem3,
+      filter: "third",
+      url: "https://primespot-72d6b.web.app/",
+    },
+    { image: portfolioItem6, 
+      filter: "third", 
+      url: "https://openai-funny-chatbot.netlify.app/"
+    },
+    { image: portfolioItem6, 
+     filter: "third", 
+     url: "https://face-comparision-with-expression.netlify.app" 
+    },
   ];
 
   return (
