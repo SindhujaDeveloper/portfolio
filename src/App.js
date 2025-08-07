@@ -3,11 +3,8 @@ import React, { useEffect, useState } from "react";
 import AboutPage from "./pages/AboutPage";
 import QualificationPage from "./pages/QualificationPage";
 import SkillPage from "./pages/SkillsPage";
-import ServicePage from "./pages/ServicePage";
 import PortfolioPage from "./pages/PortfolioPage";
-import TestimonialPage from "./pages/ReviewsPage";
 import ContactPage from "./pages/ContactPage";
-import BlogPage from "./pages/BlogPage";
 import Footer from "./pages/Footer";
 import NavBar from "./pages/NavBar";
 import Header from "./pages/Header";
@@ -25,7 +22,6 @@ function App() {
         setNavbarVisible(false);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -55,11 +51,14 @@ function App() {
         <Footer />
         {/* Scroll to Bottom */}
         {window.scrollY > 100 && navbarVisible ? null : (
-          <i
-            className={`fa fa-2x fa-angle-down text-white scroll-to-bottom ${
-              window.scrollY > 100 ? "hidden" : "visible"
-            }`}
-          />
+          <Button
+            className={`${window.scrollY > 100 ? "hidden" : "visible"}`}
+            onClick={() => window.scrollTo({ top: 3900, behavior: "smooth" })}
+          >
+            <i
+              className={`fa fa-2x fa-angle-down text-white scroll-to-bottom `}
+            />
+          </Button>
         )}
         {/* Back to Top */}
         {window.scrollY > 200 ? (

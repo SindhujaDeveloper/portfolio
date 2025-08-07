@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 const ContactPage = () => {
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [validation, setValidation] = useState(false);
+
   return (
     <div className="container-fluid py-5" id="contact">
       <Container>
@@ -20,7 +24,7 @@ const ContactPage = () => {
           <Col lg={8}>
             <div className="contact-form text-center">
               <div id="success" />
-              <Form name="sentMessage" id="contactForm" noValidate>
+              <Form name="sentMessage" id="contactForm" validated={validation}>
                 <Row>
                   <Col sm={6}>
                     <Form.Group controlId="name" className="control-group">
@@ -51,6 +55,8 @@ const ContactPage = () => {
                       <Form.Control
                         type="text"
                         placeholder="Subject"
+                        value={subject}
+                        onChange={(e) => setSubject(e.target.value)}
                         required
                         data-validation-required-message="Please enter a subject"
                       />
@@ -65,6 +71,8 @@ const ContactPage = () => {
                         as="textarea"
                         rows={5}
                         placeholder="Message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                         required
                         data-validation-required-message="Please enter your message"
                       />
@@ -75,9 +83,14 @@ const ContactPage = () => {
                 <Row>
                   <Col sm={12}>
                     <Button
+                      href={
+                        validation === true
+                          ? `mailto:crazydeveloper.p@gmail.com?subject=${subject}&body=${message}`
+                          : ""
+                      }
                       variant="outline-primary"
-                      type="submit"
                       id="sendMessageButton"
+                      onClick={() => setValidation(true)}
                     >
                       Send Message
                     </Button>
