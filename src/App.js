@@ -1,9 +1,11 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import AboutPage from "./pages/AboutPage";
-import QualificationPage from "./pages/QualificationPage";
+import ExperiencePage from "./pages/ExperiencePage";
+import EducationPage from "./pages/EducationPage";
 import SkillPage from "./pages/SkillsPage";
-import PortfolioPage from "./pages/PortfolioPage";
+// import PortfolioPage from "./pages/PortfolioPage";
+import CaseStudiesSection from "./pages/CaseStudiesSection";
 import ContactPage from "./pages/ContactPage";
 import Footer from "./pages/Footer";
 import NavBar from "./pages/NavBar";
@@ -36,17 +38,15 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" aria-label="Main content">
       <>
         <NavBar />
         <Header />
         <AboutPage />
-        <QualificationPage />
+        <ExperiencePage />
+        <EducationPage />
         <SkillPage />
-        {/* <ServicePage /> */}
-        <PortfolioPage />
-        {/* <TestimonialPage /> */}
-        {/* <BlogPage /> */}
+        <CaseStudiesSection />
         <ContactPage />
         <Footer />
         {/* Scroll to Bottom */}
@@ -56,16 +56,15 @@ function App() {
             onClick={() => window.scrollTo({ top: 3900, behavior: "smooth" })}
           >
             <i
-              className={`fa fa-2x fa-angle-down text-white scroll-to-bottom `}
+              className={`fa fa-2x fa-angle-down  scroll-to-bottom `}
             />
           </Button>
         )}
         {/* Back to Top */}
         {window.scrollY > 200 ? (
           <Button
-            className={`btn btn-outline-dark px-0 back-to-top ${
-              window.scrollY > 100 ? "hidden" : "visible"
-            }`}
+            className={`btn btn-outline-dark px-0 back-to-top ${window.scrollY > 100 ? "hidden" : "visible"
+              }`}
             onClick={scrollToTop}
           >
             <i className="fa fa-angle-double-up" />

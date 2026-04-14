@@ -16,40 +16,23 @@ const SkillPage = () => {
   return (
     <div className="container-fluid py-5" id="skill">
       <Container>
-        <div className="position-relative d-flex align-items-center justify-content-center">
-          <h1
-            className="display-1 text-uppercase text-white"
-            style={{ WebkitTextStroke: "1px #dee2e6" }}
-          >
-            Skills
-          </h1>
-          <h1 className="position-absolute text-uppercase text-primary">
-            My Skills
-          </h1>
-        </div>
+        <Row>
+          <Col md={12} className="text-center">
+            <h2 className="section-title mb-5">Skill Progress</h2>
+          </Col>
+        </Row>
         <Row className="align-items-center">
-          <Col md={6}>
-            {skills.slice(0, 4).map((skill, index) => (
-              <div className="skill mb-4" key={index}>
+          {skills.map((skill, index) => (
+            <Col md={6} key={index}>
+              <div className="skill mb-4">
                 <div className="d-flex justify-content-between">
                   <h6 className="font-weight-bold">{skill.name}</h6>
                   <h6 className="font-weight-bold">{skill.value}%</h6>
                 </div>
                 <ProgressBar now={skill.value} variant={skill.color} />
               </div>
-            ))}
-          </Col>
-          <Col md={6}>
-            {skills.slice(4, 8).map((skill, index) => (
-              <div className="skill mb-4" key={index}>
-                <div className="d-flex justify-content-between">
-                  <h6 className="font-weight-bold">{skill.name}</h6>
-                  <h6 className="font-weight-bold">{skill.value}%</h6>
-                </div>
-                <ProgressBar now={skill.value} variant={skill.color} />
-              </div>
-            ))}
-          </Col>
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>

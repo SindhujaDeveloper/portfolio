@@ -33,17 +33,6 @@ const TestimonialPage = () => {
   return (
     <div className="container-fluid py-5" id="testimonial">
       <Container>
-        <div className="position-relative d-flex align-items-center justify-content-center">
-          <h1
-            className="display-1 text-uppercase text-white"
-            style={{ WebkitTextStroke: "1px #dee2e6" }}
-          >
-            Review
-          </h1>
-          <h1 className="position-absolute text-uppercase text-primary">
-            Clients Say
-          </h1>
-        </div>
         <Row className="justify-content-center">
           <Col lg={8}>
             <div className="owl-carousel testimonial-carousel">
