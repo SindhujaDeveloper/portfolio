@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+    <div className="container-fluid  mt-5 py-5 px-sm-3 px-md-5">
       <Container className="text-center py-5">
         <div className="d-flex justify-content-center mb-4">
           <a
@@ -38,29 +38,29 @@ const Footer = () => {
           </a>
         </div>
         <div className="d-flex justify-content-center mb-3">
-          {/* <a className="text-white" href="" disabled="disabled"> */}
+          {/* <a className="" href="" disabled="disabled"> */}
           Privacy
           {/* </a> */}
           <span className="px-3">|</span>
-          {/* <a className="text-white" href="#terms" aria-disabled> */}
+          {/* <a className="" href="#terms" aria-disabled> */}
           Terms
           {/* </a> */}
           <span className="px-3">|</span>
-          {/* <a className="text-white" href="#faq" aria-disabled> */}
+          {/* <a className="" href="#faq" aria-disabled> */}
           FAQs
           {/* </a> */}
           <span className="px-3">|</span>
-          {/* <a className="text-white" href="#help" aria-disabled> */}
+          {/* <a className="" href="#help" aria-disabled> */}
           Help
           {/* </a> */}
         </div>
         <p className="m-0">
-          {/* <a className="text-white font-weight-bold" href="#domain">
+          {/* <a className=" font-weight-bold" href="#domain">
             Domain Name
           </a> */}
           All Rights Reserved. Designed by{" "}
           <a
-            className="text-white font-weight-bold"
+            className=" font-weight-bold"
             href="https://sindhujadeveloperportfolio.netlify.app"
           >
             © Sindhuja

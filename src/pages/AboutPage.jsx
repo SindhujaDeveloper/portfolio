@@ -1,109 +1,39 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import aboutImage from "../img/profile_image.png";
 
 const AboutPage = () => {
   return (
-    <div className="container-fluid py-5" id="about">
+    <motion.div className="container-fluid py-5 bg-light" id="about" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
       <Container>
-        <div className="position-relative d-flex align-items-center justify-content-center">
-          <h1
-            className="display-1 text-uppercase text-white"
-            style={{ WebkitTextStroke: "1px #dee2e6" }}
-          >
-            About
-          </h1>
-          <h1 className="position-absolute text-uppercase text-primary">
-            About Me
-          </h1>
-        </div>
         <Row className="align-items-center">
-          <Col lg={5} pb={4} pb-lg-0>
-            <img className="img-fluid rounded w-100" src={aboutImage} alt="" />
-          </Col>
-          <Col lg={7}>
-            <h3 className="mb-4">Web Developer</h3>
-            <p>
-              Experienced web developer proficient in front-end and back-end
-              technologies. Skilled in designing and implementing responsive and
-              user-friendly websites. Strong expertise in HTML, CSS, JavaScript,
-              and various frameworks. Dedicated to creating efficient, visually
-              appealing online experiences.
-            </p>
-            <Row className="mb-3">
-              <Col sm={6} py={5}>
-                <h6>
-                  Name: <span className="text-secondary">Sindhuja</span>
-                </h6>
-              </Col>
-              <Col sm={6} py={5}>
-                <h6>
-                  Birthday:{" "}
-                  <span className="text-secondary">14 January 2000</span>
-                </h6>
-              </Col>
-              <Col sm={6} py={2}>
-                <h6>
-                  Degree: <span className="text-secondary">B.E</span>
-                </h6>
-              </Col>
-              <Col sm={6} py={2}>
-                <h6>
-                  Experience: <span className="text-secondary">2.7 Years</span>
-                </h6>
-              </Col>
-              <Col sm={6} py={2}>
-                <h6>
-                  Phone:{" "}
-                  <a
-                    href="tel:+917868049366"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-secondary"
-                  >
-                    +91 7868049366
-                  </a>
-                </h6>
-              </Col>
-              <Col sm={6} py={2}>
-                <h6>
-                  Email:{" "}
-                  <span className="text-secondary">
-                    crazydeveloper.p@gmail.com
+          <Col lg={12}>
+            <motion.h3 className="section-title mb-4" initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.2, duration: 0.7 }} viewport={{ once: true }}>
+              Discover More About Me
+            </motion.h3>
+            <motion.p className="mb-4" style={{ fontSize: "1.1rem", lineHeight: "1.8" }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.7 }} viewport={{ once: true }}>
+              I’m a passionate <b style={{ color: "#0BCEAF" }}>Web Developer</b> with over 2 years of experience bringing digital products to life. I seamlessly blend creative design logic with robust technical architectures using <b>React</b>, <b>Node.js</b>, and <b>JavaScript</b>. My goal is simple: to create delightful, highly performant, and accessible user experiences that solve real-world problems.
+            </motion.p>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} viewport={{ once: true }}>
+              <h5 className="font-weight-bold mb-3">Core Technologies</h5>
+              <div className="d-flex flex-wrap mb-4">
+                {["React & JavaScript", "Node.js", "Bootstrap & Material UI", "Responsive Design", "API Integration", "UI/UX Principles", "Performance Optimization"].map((skill, idx) => (
+                  <span key={idx} className="badge badge-pill shadow-sm py-2 px-3 m-1" style={{ fontSize: "0.9rem", border: "1px solid #0BCEAF", color: "#0BCEAF", backgroundColor: "transparent" }}>
+                    {skill}
                   </span>
-                </h6>
-              </Col>
-              <Col sm={6} py={2}>
-                <h6>
-                  Address:{" "}
-                  <a
-                    className="text-secondary"
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.google.com/maps/place/Coimbatore,+Tamil+Nadu/@11.0139578,76.8848326,12z/data=!3m1!4b1!4m6!3m5!1s0x3ba859af2f971cb5:0x2fc1c81e183ed282!8m2!3d11.0168445!4d76.9558321!16zL20vMDE5ZmM0?entry=ttu"
-                  >
-                    123 Street, Coimbatore, Tamilnadu
-                  </a>
-                </h6>
-              </Col>
-              <Col sm={6} py={2}>
-                <h6>
-                  Freelance: <span className="text-secondary">Available</span>
-                </h6>
-              </Col>
-            </Row>
-            <Button
-              href="mailto:crazydeveloper.p@gmail.com?subject=Hiring Request"
-              variant="outline-primary"
-              className="mr-4"
-            >
-              Hire Me
-            </Button>
-            {/* <Button variant="outline-primary">Learn More</Button> */}
+                ))}
+              </div>
+              <div className="d-flex align-items-center mt-3">
+                <a href="#contact">
+                  <Button variant="custom" className="py-2 px-4 shadow-lg mr-3">Hire Me</Button>
+                </a>
+              </div>
+            </motion.div>
           </Col>
         </Row>
       </Container>
-    </div>
+    </motion.div>
   );
 };
 
