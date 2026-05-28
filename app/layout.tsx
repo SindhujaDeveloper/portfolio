@@ -4,7 +4,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Providers from "./providers";
-import Sparks from "@/components/Sparks";
+// import Sparks from "@/components/Sparks";
 
 const poppins = Poppins({
   weight: ["300", "400", "600", "700", "800"],
@@ -68,7 +68,7 @@ export default function RootLayout({
             <div className="blob blob-3"></div>
           </div>
 
-          <Sparks />
+          {/* <Sparks /> */}
 
           {children}
         </Providers>
