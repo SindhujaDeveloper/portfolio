@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
     // Turbopack inferring the workspace root when multiple lockfiles exist.
     root: path.join(__dirname),
   },
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
