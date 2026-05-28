@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSkills() {
   const stats = [
-    { label: "Years Experience", value: "6+" },
+    { label: "Years Experience", value: "5+" },
     { label: "Projects Done", value: "40+" },
     { label: "Happy Clients", value: "25+" },
   ];
@@ -32,7 +32,7 @@ export default function AboutSkills() {
                 className="experience-badge-modern glass-card p-3"
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="badge-number">06</span>
+                <span className="badge-number">05</span>
                 <span className="badge-text">Years of<br/>Experience</span>
               </motion.div>
             </motion.div>

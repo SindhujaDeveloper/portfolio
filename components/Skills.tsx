@@ -66,7 +66,6 @@ export default function Skills() {
                 >
                   <div 
                     className="skill-icon-wrapper mb-3 mx-auto" 
-                    style={{ background: s.bg }}
                   >
                     <div className="skill-icon fs-2 d-flex align-items-center justify-content-center h-100">
                       {s.icon}
