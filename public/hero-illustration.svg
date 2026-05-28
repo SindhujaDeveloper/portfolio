@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="lg1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ff5ec7" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ff7a59" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="lg2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#2b1738"/>
+      <stop offset="100%" stop-color="#0b0526"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="36" result="b" />
+      <feBlend in="SourceGraphic" in2="b" mode="screen" />
+    </filter>
+  </defs>
+
+  <!-- Background panel -->
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#lg2)" rx="18" />
+
+  <!-- Glowing orbs -->
+  <circle cx="1300" cy="120" r="200" fill="url(#lg1)" opacity="0.12" filter="url(#glow)" />
+  <circle cx="280" cy="180" r="160" fill="#6b3db8" opacity="0.12" filter="url(#glow)" />
+
+  <!-- Desk shadow -->
+  <ellipse cx="800" cy="700" rx="520" ry="36" fill="#000" opacity="0.16" />
+
+  <!-- Laptop body -->
+  <g transform="translate(540,260)">
+    <rect x="0" y="160" width="520" height="20" rx="6" fill="#0d0612" opacity="0.6" />
+    <rect x="20" y="0" width="480" height="280" rx="14" fill="#161224" stroke="#3b2a4b" stroke-width="2" />
+    <!-- screen inner -->
+    <rect x="36" y="20" width="448" height="200" rx="10" fill="#0b0a10" />
+    <!-- code lines -->
+    <g transform="translate(52,36)" fill="#9be3ff" opacity="0.95">
+      <rect x="0" y="0" width="340" height="8" rx="4" />
+      <rect x="0" y="24" width="300" height="8" rx="4" />
+      <rect x="0" y="48" width="380" height="8" rx="4" />
+    </g>
+    <!-- keyboard -->
+    <rect x="36" y="224" width="448" height="28" rx="6" fill="#0c0910" />
+  </g>
+
+  <!-- Character sitting at desk (stylized) -->
+  <g transform="translate(840,200)">
+    <!-- body -->
+    <ellipse cx="-120" cy="330" rx="80" ry="24" fill="#0b0710" opacity="0.6" />
+    <rect x="-220" y="120" width="160" height="220" rx="36" fill="#2c1840" />
+    <!-- head -->
+    <circle cx="-140" cy="70" r="44" fill="#f2d6c9" />
+    <!-- hair -->
+    <path d="M-184,58 q44 -64 96 -18 q-6 44 -56 66 z" fill="#2b1738" />
+    <!-- shirt -->
+    <rect x="-210" y="220" width="140" height="40" rx="16" fill="#6b3db8" />
+    <!-- hands on laptop -->
+    <rect x="-180" y="240" width="20" height="12" rx="6" fill="#f2d6c9" transform="rotate(-8 -170 246)" />
+    <rect x="-120" y="240" width="20" height="12" rx="6" fill="#f2d6c9" transform="rotate(8 -110 246)" />
+  </g>
+
+  <!-- Floating app icons -->
+  <g transform="translate(1160,160)" opacity="0.95">
+    <rect x="0" y="0" width="90" height="90" rx="16" fill="#00b894" />
+    <rect x="110" y="0" width="90" height="90" rx="16" fill="#ff7a59" />
+    <rect x="220" y="0" width="90" height="90" rx="16" fill="#5ec7ff" />
+  </g>
+
+  <!-- Glow overlay -->
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#lg1)" opacity="0.03" />
+
+</svg>
