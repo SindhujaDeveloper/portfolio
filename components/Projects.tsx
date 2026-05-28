@@ -2,6 +2,7 @@
 import React from "react";
 import { Container, Row, Col, Badge } from "react-bootstrap";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 interface Project {
   title: string;
@@ -79,19 +80,61 @@ export default function Projects() {
     }
   ];
 
+  // Stagger animation variants for cards
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        stiffness: 70,
+        damping: 15
+      }
+    }
+  };
+
   return (
     <section id="projects" className="section py-5">
       <Container>
-        <span className="section-subtitle">Portfolio Highlights</span>
-        <h3 className="section-title">Latest Projects</h3>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="section-subtitle">Portfolio Highlights</span>
+          <h3 className="section-title">Latest Projects</h3>
+        </motion.div>
         
-        <Row className="g-4 mt-2">
-          {projects.map((p, idx) => (
-            <Col key={idx} lg={4} md={6}>
-              <ProjectCard project={p} />
-            </Col>
-          ))}
-        </Row>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <Row className="g-4 mt-2">
+            {projects.map((p, idx) => (
+              <Col key={idx} lg={4} md={6}>
+                <motion.div variants={cardVariants} className="h-100">
+                  <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }} className="h-100">
+                    <ProjectCard project={p} />
+                  </motion.div>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </motion.div>
       </Container>
     </section>
   );

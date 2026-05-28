@@ -51,6 +51,7 @@ export default function NavBar() {
       expand="lg" 
       variant="dark" 
       className={`navbar-sticky py-3 ${scrolled ? 'scrolled' : ''}`}
+      sticky="top"
     >
       <Container>
         <Navbar.Brand 

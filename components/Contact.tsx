@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { FaPaperPlane, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -73,19 +74,32 @@ export default function Contact() {
   return (
     <section id="contact" className="section py-5 mb-5">
       <Container>
-        <span className="section-subtitle">Get In Touch</span>
-        <h3 className="section-title">Let's Connect!</h3>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="section-subtitle">Get In Touch</span>
+          <h3 className="section-title">Let's Connect!</h3>
+        </motion.div>
         
         <Row className="mt-5">
           <Col lg={5} className="contact-info-col">
-            <div className="contact-info-card glass-card p-5 h-100">
+            <motion.div 
+              className="contact-info-card glass-card p-5 h-100"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               <h4 className="text-white mb-4">Contact Information</h4>
               <p className="text-secondary mb-5">
                 I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
               </p>
               
               <div className="d-flex flex-column gap-4">
-                <div className="contact-item d-flex align-items-center gap-4">
+                <motion.div className="contact-item d-flex align-items-center gap-4" whileHover={{ x: 10 }}>
                   <div className="contact-icon-box">
                     <FaEnvelope />
                   </div>
@@ -93,9 +107,9 @@ export default function Contact() {
                     <div className="text-secondary small fw-bold text-uppercase" style={{ letterSpacing: '1px' }}>Email</div>
                     <div className="text-white fw-bold">sindhujap255@gmail.com</div>
                   </div>
-                </div>
+                </motion.div>
                 
-                <div className="contact-item d-flex align-items-center gap-4">
+                <motion.div className="contact-item d-flex align-items-center gap-4" whileHover={{ x: 10 }}>
                   <div className="contact-icon-box">
                     <FaPhoneAlt />
                   </div>
@@ -103,9 +117,9 @@ export default function Contact() {
                     <div className="text-secondary small fw-bold text-uppercase" style={{ letterSpacing: '1px' }}>Phone</div>
                     <div className="text-white fw-bold">+91 7868049366</div>
                   </div>
-                </div>
+                </motion.div>
                 
-                <div className="contact-item d-flex align-items-center gap-4">
+                <motion.div className="contact-item d-flex align-items-center gap-4" whileHover={{ x: 10 }}>
                   <div className="contact-icon-box">
                     <FaMapMarkerAlt />
                   </div>
@@ -113,13 +127,19 @@ export default function Contact() {
                     <div className="text-secondary small fw-bold text-uppercase" style={{ letterSpacing: '1px' }}>Location</div>
                     <div className="text-white fw-bold">Tamil Nadu, India</div>
                   </div>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </Col>
           
           <Col lg={7}>
-            <div className="contact-form-wrapper glass-card p-5">
+            <motion.div 
+              className="contact-form-wrapper glass-card p-5"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <Form onSubmit={handleSubmit} noValidate>
                 <Row>
                   <Col md={6}>
@@ -191,11 +211,13 @@ export default function Contact() {
                   </Form.Control.Feedback>
                 </Form.Group>
                 
-                <Button type="submit" className="glow-btn d-flex align-items-center gap-2">
-                  Send Message <FaPaperPlane size={14} />
-                </Button>
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Button type="submit" className="glow-btn d-flex align-items-center gap-2">
+                    Send Message <FaPaperPlane size={14} />
+                  </Button>
+                </motion.div>
               </Form>
-            </div>
+            </motion.div>
           </Col>
         </Row>
       </Container>

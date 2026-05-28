@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiTypescript, SiRedux, SiTailwindcss, SiGit } from "react-icons/si";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   const swiperRef = useRef<any>(null);
@@ -24,11 +25,22 @@ export default function Skills() {
   return (
     <section id="skills" className="section py-5">
       <div className="container">
-        <span className="section-subtitle">Technical Arsenal</span>
-        <h3 className="section-title">My Skills</h3>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="section-subtitle">Technical Arsenal</span>
+          <h3 className="section-title">My Skills</h3>
+        </motion.div>
         
-        <div
+        <motion.div
           className="skills-carousel mt-5"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
           onMouseLeave={() => swiperRef.current?.autoplay?.start()}
         >
@@ -48,7 +60,10 @@ export default function Skills() {
           >
             {slides.map((s, idx) => (
               <SwiperSlide key={idx} style={{ width: 260 }}>
-                <div className="skill-card glass-card p-4 text-center">
+                <motion.div 
+                  className="skill-card glass-card p-4 text-center"
+                  whileHover={{ y: -5 }}
+                >
                   <div 
                     className="skill-icon-wrapper mb-3 mx-auto" 
                     style={{ background: s.bg }}
@@ -59,11 +74,11 @@ export default function Skills() {
                   </div>
                   <h5 className="skill-title text-white mb-2">{s.title}</h5>
                   <p className="skill-desc text-muted mb-0">{s.desc}</p>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

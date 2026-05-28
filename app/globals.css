@@ -57,6 +57,11 @@ body {
   animation: move 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.blob-1 {
+  top: -100px;
+  left: -100px;
+}
+
 .blob-2 {
   background: radial-gradient(circle, var(--portfolio-glow2) 0%, transparent 70%);
   width: 600px;
@@ -166,6 +171,42 @@ body {
 
 .hero-image {
   filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5));
+}
+
+.floating-node {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.node-1 {
+  top: 15%;
+  left: 25%;
+}
+
+.node-2 {
+  top: 25%;
+  right: -5%;
+}
+
+.node-3 {
+  bottom: 25%;
+  left: 0%;
+}
+
+.node-4 {
+  bottom: 15%;
+  right: 5%;
 }
 
 /* Scroll Indicator */
@@ -621,7 +662,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(8, 11, 22, 0.7);
+  background: rgba(8, 11, 22, 1);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);

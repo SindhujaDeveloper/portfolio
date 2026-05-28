@@ -2,6 +2,7 @@
 import React from "react";
 import { FaBriefcase, FaCode, FaRocket, FaGraduationCap, FaBook } from "react-icons/fa";
 import { Row, Col } from "react-bootstrap";
+import { motion } from "framer-motion";
 
 export default function Experience() {
   const experiences = [
@@ -51,20 +52,40 @@ export default function Experience() {
   return (
     <section className="section experience-section container" id="experience">
        <div className="pt-5">
-        <div className="experience-header">
+        <motion.div 
+          className="experience-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">My Experience</h2>
-          {/* <p className="section-subtitle-text">Professional journey and career milestones</p> */}
-        </div>
+        </motion.div>
 
         <div className="timeline-container">
           {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item">
+            <motion.div 
+              key={index} 
+              className="timeline-item"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+            >
               <div className="timeline-marker">
-                <div className="timeline-icon">{exp.icon}</div>
+                <motion.div 
+                  className="timeline-icon"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                >
+                  {exp.icon}
+                </motion.div>
                 {index < experiences.length - 1 && <div className="timeline-line"></div>}
               </div>
               <div className="timeline-content">
-                <div className="timeline-card">
+                <motion.div 
+                  className="timeline-card"
+                  whileHover={{ y: -8 }}
+                >
                   {exp.current && <span className="current-badge">Current Role</span>}
                   <h5 className="exp-role">{exp.role}</h5>
                   <div className="exp-meta">
@@ -73,24 +94,37 @@ export default function Experience() {
                     <span className="period-text">{exp.period}</span>
                   </div>
                   <p className="exp-desc">{exp.description}</p>
-                </div>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
       <div className="section-divider" style={{ margin: '80px auto' }}></div>
 
       <div className="py-5">
-        <div className="experience-header">
+        <motion.div 
+          className="experience-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">My Education</h2>
-        </div>
+        </motion.div>
 
         <div className="education-row-container mt-5">
           <Row className="g-4">
             {education.map((edu, index) => (
               <Col key={index} md={6} className="">
-                <div className="education-card-wrapper h-100">
+                <motion.div 
+                  className="education-card-wrapper h-100"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  whileHover={{ scale: 1.02 }}
+                >
                   <div className="timeline-card education-card h-100 d-flex flex-row p-4">
                     <div className="timeline-icon education-icon mb-0">
                       {edu.icon}
@@ -105,7 +139,7 @@ export default function Experience() {
                     </div>
                     {/* <p className="exp-desc">{edu.description}</p> */}
                   </div>
-                </div>
+                </motion.div>
               </Col>
             ))}
           </Row>
