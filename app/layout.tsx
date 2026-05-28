@@ -1,8 +1,10 @@
-"use client";
+import type { Metadata } from "next";
 import { Poppins, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useEffect } from "react";
+
+import Providers from "./providers";
+import Sparks from "@/components/Sparks";
 
 const poppins = Poppins({
   weight: ["300", "400", "600", "700", "800"],
@@ -15,66 +17,61 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  title: "Sindhuja Developer | Frontend React Developer",
+  description:
+    "Sindhuja Developer is a Frontend Engineer with 4+ years of experience in React, Angular, and modern web development.",
+
+  keywords: [
+    "Sindhuja Developer",
+    "Sindhuja",
+    "Frontend Developer Sindhuja",
+    "React Developer Sindhuja",
+    "UI Developer India",
+  ],
+
+  openGraph: {
+    title: "Sindhuja Developer | React Frontend Engineer",
+    description:
+      "Portfolio of Sindhuja Developer - React & Frontend Engineer with 4+ years experience.",
+    url: "https://sindhujadeveloperportfolio.netlify.app/",
+    siteName: "Sindhuja Developer",
+    type: "website",
+    images: [
+      {
+        url: "https://sindhujadeveloperportfolio.netlify.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sindhuja Developer Portfolio",
+      },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  useEffect(() => {
-    // Scroll progress bar
-    const handleScroll = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrolled = (window.scrollY / scrollHeight) * 100;
-      const progressBar = document.getElementById("scroll-progress");
-      if (progressBar) progressBar.style.width = scrolled + "%";
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    // Mouse movement tracker for spotlight cards
-    const handleMouseMove = (e: MouseEvent) => {
-      const cards = document.querySelectorAll(".glass-card");
-      cards.forEach((card) => {
-        const rect = (card as HTMLElement).getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
-        (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
-      });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-
-    // Scroll reveal observer
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-          }
-        });
-      },
-      { threshold: 0.05 }
-    );
-
-    const revealElements = document.querySelectorAll(".scroll-reveal");
-    revealElements.forEach((el) => observer.observe(el));
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", handleMouseMove);
-      revealElements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   return (
-    <html lang="en" className={`${poppins.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${geistMono.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
-        <div id="scroll-progress" className="scroll-progress"></div>
-        <div className="bg-blobs">
-          <div className="blob blob-1"></div>
-          <div className="blob blob-2"></div>
-          <div className="blob blob-3"></div>
-        </div>
-        {children}
+        <Providers>
+          <div id="scroll-progress" className="scroll-progress"></div>
+
+          <div className="bg-blobs">
+            <div className="blob blob-1"></div>
+            <div className="blob blob-2"></div>
+            <div className="blob blob-3"></div>
+          </div>
+
+          <Sparks />
+
+          {children}
+        </Providers>
       </body>
     </html>
   );
