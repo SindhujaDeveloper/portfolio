@@ -77,7 +77,7 @@ export default function Hero() {
                 src="/hero-illustration.png"
                 alt="Sindhuja Developer"
                 className="img-fluid hero-image"
-                animate={{ y: [0, -15, 0] }}
+                animate={{ y: [0, -16, 0] }}
                 transition={{
                   duration: 6,
                   repeat: Infinity,
