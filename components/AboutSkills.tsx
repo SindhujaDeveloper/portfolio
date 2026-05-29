@@ -25,7 +25,11 @@ export default function AboutSkills() {
             >
               <div className="about-image-wrapper glass-card p-2">
                 <div className="about-image-inner">
-                  <img src="/about-me.gif" alt="About Me" />
+                  {/* <img src="/about-me.gif" alt="About Me" /> */}
+                  <video autoPlay muted loop playsInline width="600" className="about-video" >
+                    <source src="/about-me.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               <motion.div 
