@@ -30,18 +30,19 @@ export const metadata: Metadata = {
     "React Developer Sindhuja",
     "UI Developer India",
   ],
-icons: {
+  icons: {
     icon: [
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     shortcut: "/favicon.ico",
   },
+  authors: [{ name: "Sindhuja Developer" }],
   openGraph: {
-    title: "Sindhuja Developer | React Frontend Engineer",
+    title: "Sindhuja Developer",
     description:
       "Portfolio of Sindhuja Developer - React & Frontend Engineer with 4+ years experience.",
     url: "https://sindhujadeveloperportfolio.netlify.app/",
-    siteName: "Sindhuja Developer",
+    siteName: "Sindhuja Periysamy Portfolio",
     type: "website",
     images: [
       {

@@ -13,9 +13,27 @@ export const metadata = {
     "Explore Sindhuja Developer portfolio built with React, Next.js, Angular and modern UI development skills.",
 };
 
+ const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Sindhuja Developer",
+    url: "https://sindhujadeveloperportfolio.netlify.app/",
+    sameAs: [
+      "https://github.com/SindhujaDeveloper",
+      "https://linkedin.com/in/sindhuja14",
+    ],
+  };
+
 export default function Home() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personSchema),
+        }}
+      />
+      <h1 className="d-none">Sindhuja Developer</h1>
       <NavBar />
       <main>
         <Hero />
