@@ -16,6 +16,8 @@ export default function NavBar() {
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
+    let lastActive = "home";
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
@@ -29,7 +31,13 @@ export default function NavBar() {
           current = id;
         }
       }
-      setActive(current);
+      
+      // Update URL only when active section changes
+      if (current !== lastActive) {
+        lastActive = current;
+        window.history.replaceState(null, "", `#${current}`);
+        setActive(current);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -39,6 +47,11 @@ export default function NavBar() {
   const handleNav = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     setExpanded(false);
+    
+    // Update URL using History API
+    window.history.pushState(null, "", `#${id}`);
+    
+    // Smooth scroll to section
     const el = document.getElementById(id);
     if (el) {
       window.scrollTo({
@@ -60,7 +73,7 @@ export default function NavBar() {
         <Navbar.Brand 
           href="#home" 
           onClick={(e) => handleNav(e, "home")} 
-          className="text-white fw-bold fs-4"
+          className="accent-text fw-bold fs-2"
           style={{ letterSpacing: '1px' }}
         >
           SINDHUJA
@@ -81,6 +94,7 @@ export default function NavBar() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="ms-auto align-items-lg-center gap-3">
+              <Nav.Link href="#home" onClick={(e) => handleNav(e, "home")} className={active === "home" ? "active" : ""}>Home</Nav.Link>
               <Nav.Link href="#about" onClick={(e) => handleNav(e, "about")} className={active === "about" ? "active" : ""}>About</Nav.Link>
               <Nav.Link href="#skills" onClick={(e) => handleNav(e, "skills")} className={active === "skills" ? "active" : ""}>Skills</Nav.Link>
               <Nav.Link href="#experience" onClick={(e) => handleNav(e, "experience")} className={active === "experience" ? "active" : ""}>Experience</Nav.Link>
@@ -92,6 +106,7 @@ export default function NavBar() {
                 <a href={SOCIAL.github} className="social-icon" target="_blank" rel="noreferrer"><FaGithub /></a>
                 <a href={SOCIAL.mail} className="social-icon"><FaEnvelope /></a>
               </div>
+              
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

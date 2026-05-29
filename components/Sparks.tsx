@@ -27,7 +27,7 @@ export default function Sparks() {
           animationDuration: `${duration}s`,
           animationDelay: `${delay}s`,
           boxShadow: `0 0 ${size}px 0.5px rgba(255, 255, 255, 0.3), 0 0 ${size * 1.5}px 1px ${glowColor}`,
-          opacity: 0.7
+          opacity: 0.5
         },
       };
     });

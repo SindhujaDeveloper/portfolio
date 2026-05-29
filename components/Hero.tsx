@@ -9,6 +9,21 @@ export default function Hero() {
   const resumeHref = "/resume.pdf";
   const resumeFileName = "Sindhuja_Resume.pdf";
 
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Update URL to contact section
+    window.history.pushState(null, "", "#contact");
+    
+    // Smooth scroll to contact section
+    const contactEl = document.getElementById("contact");
+    if (contactEl) {
+      window.scrollTo({
+        top: contactEl.offsetTop - 70,
+        behavior: "smooth"
+      });
+    }
+  };
+
   // Stagger variants for the text content
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -55,7 +70,13 @@ export default function Hero() {
                 Turning complex problems into elegant digital solutions.
               </motion.p>
               <motion.div variants={itemVariants} className="d-flex gap-3 flex-wrap">
-                <a href="#contact" className="glow-btn text-decoration-none">Hire Me</a>
+                <a
+                  href="#contact"
+                  onClick={handleContactClick}
+                  className="glow-btn text-decoration-none"
+                >
+                  Hire Me
+                </a>
                 <a
                   href={resumeHref}
                   download={resumeFileName}

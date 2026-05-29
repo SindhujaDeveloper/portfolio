@@ -12,6 +12,7 @@ const SOCIAL = {
 
 export default function Footer() {
   const handleScrollToTop = () => {
+    window.history.pushState(null, "", "#home");
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -20,6 +21,11 @@ export default function Footer() {
 
   const handleNav = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
+    
+    // Update URL using History API
+    window.history.pushState(null, "", `#${id}`);
+    
+    // Smooth scroll to section
     const el = document.getElementById(id);
     if (el) {
       window.scrollTo({
@@ -43,7 +49,7 @@ export default function Footer() {
             <Col lg={4} md={6}>
               <div className="footer-brand mb-3">
                 <span className="text-white fw-bold fs-3" style={{ letterSpacing: '1px' }}>
-                  SINDHUJA<span style={{ color: 'var(--portfolio-glow1)' }}>.</span>
+                  SINDHUJA
                 </span>
               </div>
               <p className="text-secondary mb-4 footer-tagline">
