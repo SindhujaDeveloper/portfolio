@@ -84,7 +84,7 @@ export default function Contact() {
           <h3 className="section-title">Let's Connect!</h3>
         </motion.div>
         
-        <Row className="mt-5">
+        <Row className="mt-3 g-5">
           <Col lg={5} className="contact-info-col">
             <motion.div 
               className="contact-info-card glass-card p-5 h-100"

@@ -13,6 +13,7 @@ const SOCIAL = {
 export default function NavBar() {
   const [active, setActive] = useState<string>("home");
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +38,7 @@ export default function NavBar() {
 
   const handleNav = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
+    setExpanded(false);
     const el = document.getElementById(id);
     if (el) {
       window.scrollTo({
@@ -52,6 +54,7 @@ export default function NavBar() {
       variant="dark" 
       className={`navbar-sticky py-3 ${scrolled ? 'scrolled' : ''}`}
       sticky="top"
+      expanded={expanded}
     >
       <Container>
         <Navbar.Brand 
@@ -60,26 +63,38 @@ export default function NavBar() {
           className="text-white fw-bold fs-4"
           style={{ letterSpacing: '1px' }}
         >
-          SINDHUJA<span style={{ color: 'var(--portfolio-glow1)' }}>.</span>
+          SINDHUJA
         </Navbar.Brand>
         
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0 shadow-none" />
+        <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" className="border-0 shadow-none" onClick={() => setExpanded(expanded ? false : "expanded" as unknown as boolean)}/>
         
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto align-items-center gap-2">
-            <Nav.Link href="#about" onClick={(e) => handleNav(e, "about")} className={active === "about" ? "active" : ""}>About</Nav.Link>
-            <Nav.Link href="#skills" onClick={(e) => handleNav(e, "skills")} className={active === "skills" ? "active" : ""}>Skills</Nav.Link>
-            <Nav.Link href="#experience" onClick={(e) => handleNav(e, "experience")} className={active === "experience" ? "active" : ""}>Experience</Nav.Link>
-            <Nav.Link href="#projects" onClick={(e) => handleNav(e, "projects")} className={active === "projects" ? "active" : ""}>Projects</Nav.Link>
-            <Nav.Link href="#contact" onClick={(e) => handleNav(e, "contact")} className={active === "contact" ? "active" : ""}>Contact</Nav.Link>
-            
-            <div className="d-flex align-items-center gap-3 ms-lg-4 mt-3 mt-lg-0">
-              <a href={SOCIAL.linkedin} className="social-icon" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-              <a href={SOCIAL.github} className="social-icon" target="_blank" rel="noreferrer"><FaGithub /></a>
-              <a href={SOCIAL.mail} className="social-icon"><FaEnvelope /></a>
-            </div>
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Offcanvas
+          id="offcanvasNavbar-expand-lg"
+          aria-labelledby="offcanvasNavbarLabel-expand-lg"
+          placement="end"
+          style={{ backgroundColor: 'rgba(8, 11, 22, 0.95)', backdropFilter: 'blur(15px)' }}
+        >
+          <Offcanvas.Header closeButton closeVariant="white" onHide={() => setExpanded(false)}>
+            <Offcanvas.Title id="offcanvasNavbarLabel-expand-lg" className="text-white">
+              Menu
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="ms-auto align-items-lg-center gap-3">
+              <Nav.Link href="#about" onClick={(e) => handleNav(e, "about")} className={active === "about" ? "active" : ""}>About</Nav.Link>
+              <Nav.Link href="#skills" onClick={(e) => handleNav(e, "skills")} className={active === "skills" ? "active" : ""}>Skills</Nav.Link>
+              <Nav.Link href="#experience" onClick={(e) => handleNav(e, "experience")} className={active === "experience" ? "active" : ""}>Experience</Nav.Link>
+              <Nav.Link href="#projects" onClick={(e) => handleNav(e, "projects")} className={active === "projects" ? "active" : ""}>Projects</Nav.Link>
+              <Nav.Link href="#contact" onClick={(e) => handleNav(e, "contact")} className={active === "contact" ? "active" : ""}>Contact</Nav.Link>
+              
+              <div className="d-flex align-items-center gap-4 ms-lg-4 mt-4 mt-lg-0">
+                <a href={SOCIAL.linkedin} className="social-icon" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+                <a href={SOCIAL.github} className="social-icon" target="_blank" rel="noreferrer"><FaGithub /></a>
+                <a href={SOCIAL.mail} className="social-icon"><FaEnvelope /></a>
+              </div>
+            </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
       </Container>
     </Navbar>
   );

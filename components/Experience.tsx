@@ -40,13 +40,13 @@ export default function Experience() {
       description: "Explore the digital frontier with a CSE degree. Master programming, algorithms, and cutting-edge tech. Built projects and gained industry insight as a gateway to innovation.",
       icon: <FaGraduationCap />
     },
-    {
-      degree: "Bio-Maths - 12th Standard",
-      institution: "Bharathi Institutions",
-      period: "2016 - 2017",
-      description: "Discovered the synergy of biology and mathematics in the Bio-Maths program. Explored mathematical models behind biological phenomena, from genetics to ecosystems.",
-      icon: <FaBook />
-    }
+    // {
+    //   degree: "Bio-Maths - 12th Standard",
+    //   institution: "Bharathi Institutions",
+    //   period: "2016 - 2017",
+    //   description: "Discovered the synergy of biology and mathematics in the Bio-Maths program. Explored mathematical models behind biological phenomena, from genetics to ecosystems.",
+    //   icon: <FaBook />
+    // }
   ];
 
   return (

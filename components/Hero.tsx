@@ -1,17 +1,13 @@
 "use client";
 import React from "react";
-import { Button, Container, Row, Col } from "react-bootstrap";
-import { FaArrowDown } from "react-icons/fa";
+import { Container, Row, Col } from "react-bootstrap";
+import { FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { SiMongodb, SiNodedotjs, SiReact, SiTypescript } from "react-icons/si";
 
 export default function Hero() {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.pdf";
-    link.download = "Sindhuja_Resume.pdf";
-    link.click();
-  };
+  const resumeHref = "/resume.pdf";
+  const resumeFileName = "Sindhuja_Resume.pdf";
 
   // Stagger variants for the text content
   const containerVariants = {
@@ -60,7 +56,16 @@ export default function Hero() {
               </motion.p>
               <motion.div variants={itemVariants} className="d-flex gap-3 flex-wrap">
                 <a href="#contact" className="glow-btn text-decoration-none">Hire Me</a>
-                <Button className="btn-outline-custom" onClick={handleDownload}>Download CV</Button>
+                <a
+                  href={resumeHref}
+                  download={resumeFileName}
+                  className="btn-outline-custom download-cv-btn d-flex align-items-center gap-2 text-decoration-none"
+                  aria-label="Download Sindhuja's CV"
+                  title="Download Sindhuja's CV"
+                >
+                  <FaDownload size={14} />
+                  Download CV
+                </a>
               </motion.div>
             </motion.div>
           </Col>

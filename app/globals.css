@@ -394,6 +394,25 @@ body {
   transform: translateY(-3px);
 }
 
+.download-cv-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.download-cv-btn:hover,
+.download-cv-btn:focus-visible {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 40px rgba(255, 255, 255, 0.12);
+}
+
+.download-cv-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.download-cv-btn:hover svg {
+  transform: translateX(4px);
+}
+
 /* About + Skills row */
 .about-skills-row {
   display: flex;
@@ -544,13 +563,29 @@ body {
   }
 }
 
-@media (max-width: 1000px) {
-  .about-skills-row {
-    flex-direction: column;
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 8px;
   }
-
-  .skills-col {
-    width: 100%;
+  
+  .skill-card {
+    padding: 10px;
+    gap: 4px;
+    border-radius: 10px;
+  }
+  
+  .skill-card .skill-icon {
+    height: 48px;
+    border-radius: 8px;
+  }
+  
+  .skill-card .skill-title {
+    font-size: 13px;
+  }
+  
+  .skill-card .skill-desc {
+    font-size: 10px;
   }
 }
 

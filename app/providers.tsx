@@ -64,5 +64,56 @@ export default function Providers({
     };
   }, []);
 
+  // Development-only: capture router-init related errors to aid debugging
+  useEffect(() => {
+    if (process.env.NODE_ENV !== "development") return;
+
+    const onError = (e: ErrorEvent) => {
+      try {
+        const msg = e?.message || "";
+        if (msg.includes("Router action dispatched before initialization") || msg.includes("invariant expected app router to be mounted")) {
+          // Log full error and stack for diagnosis
+          // eslint-disable-next-line no-console
+          console.group("[Dev] Router initialization error captured");
+          // eslint-disable-next-line no-console
+          console.error(e.error || e.message, e);
+          // eslint-disable-next-line no-console
+          console.trace();
+          // eslint-disable-next-line no-console
+          console.groupEnd();
+        }
+      } catch (err) {
+        // noop
+      }
+    };
+
+    const onRejection = (e: PromiseRejectionEvent) => {
+      try {
+        const reason = (e && (e.reason as any)) || {};
+        const msg = reason?.message || String(reason || "");
+        if (msg.includes("Router action dispatched before initialization") || msg.includes("invariant expected app router to be mounted")) {
+          // eslint-disable-next-line no-console
+          console.group("[Dev] Router initialization promise rejection captured");
+          // eslint-disable-next-line no-console
+          console.error(reason, e);
+          // eslint-disable-next-line no-console
+          console.trace();
+          // eslint-disable-next-line no-console
+          console.groupEnd();
+        }
+      } catch (err) {
+        // noop
+      }
+    };
+
+    window.addEventListener("error", onError);
+    window.addEventListener("unhandledrejection", onRejection);
+
+    return () => {
+      window.removeEventListener("error", onError);
+      window.removeEventListener("unhandledrejection", onRejection);
+    };
+  }, []);
+
   return <>{children}</>;
 }

@@ -66,7 +66,7 @@ export default function AboutSkills() {
                         transition={{ duration: 0.5, delay: 0.4 + (i * 0.1) }}
                       >
                         <div className="stat-value text-white fw-800 fs-2">{stat.value}</div>
-                        <div className="stat-label text-muted small fw-bold text-uppercase" style={{ letterSpacing: '1px' }}>{stat.label}</div>
+                        <div className="stat-label text-white small fw-bold text-uppercase" style={{ letterSpacing: '1px' }}>{stat.label}</div>
                       </motion.div>
                     </Col>
                   ))}

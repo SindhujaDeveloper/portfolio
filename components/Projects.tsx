@@ -125,7 +125,7 @@ export default function Projects() {
         >
           <Row className="g-4 mt-2">
             {projects.map((p, idx) => (
-              <Col key={idx} lg={4} md={6}>
+              <Col key={idx} xs={12} md={6} lg={4}>
                 <motion.div variants={cardVariants} className="h-100">
                   <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }} className="h-100">
                     <ProjectCard project={p} />
