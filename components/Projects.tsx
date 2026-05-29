@@ -27,14 +27,23 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </a>
           </div>
         </div>
-        <div 
-          className="project-placeholder-bg" 
-          style={{ background: `linear-gradient(135deg, var(--portfolio-mid), var(--portfolio-mid-2))` }}
-        >
-          <span className="text-white-50">{project.title.charAt(0)}</span>
-        </div>
+        {project.image && project.image.startsWith('/') ? (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-100 h-100"
+            style={{ objectFit: 'cover' }}
+          />
+        ) : (
+          <div
+            className="project-placeholder-bg"
+            style={{ background: `linear-gradient(135deg, var(--portfolio-mid), var(--portfolio-mid-2))` }}
+          >
+            <span className="text-white-50">{project.title.charAt(0)}</span>
+          </div>
+        )}
       </div>
-      
+
       <div className="project-body p-4">
         <h4 className="project-title-text text-white mb-3">{project.title}</h4>
         <p className="project-description-text text-secondary mb-4">
@@ -55,28 +64,28 @@ const ProjectCard = ({ project }: { project: Project }) => {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: "E-Commerce Titan",
-      description: "A full-featured MERN stack marketplace with real-time inventory, Stripe integration, and a sleek admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Redux"],
-      link: "#",
-      github: "#",
-      image: "bg-1"
+      title: "NSP Foods Online",
+      description: "Lightweight Next.js storefront and admin panel for an online food menu, featuring a sleek dashboard, cart management, and Firebase integration.",
+      tech: ["Next.js", "Firebase", "Tailwind", "Radix UI"],
+      link: "https://nspfoods01.netlify.app/",
+      github: "https://github.com/SindhujaDeveloper/nspfoods_online/tree/development",
+      image: "/nspfoods_thumbnail.png"
     },
     {
-      title: "Pulse Social",
-      description: "Next-gen social networking platform with instant messaging, media sharing, and AI-driven content discovery.",
-      tech: ["Next.js", "Socket.io", "Firebase", "Tailwind"],
-      link: "#",
-      github: "#",
-      image: "bg-2"
+      title: "Face Recognition System",
+      description: "An advanced web application utilizing machine learning for accurate face comparison and real-time facial expression detection.",
+      tech: ["Python", "CSS3", "JavaScript", "Face API"],
+      link: "https://face-comparision-with-expression.netlify.app/",
+      github: "https://github.com/SindhujaDeveloper/face_recognition_system",
+      image: "/face_recognition_thumbnail.png"
     },
     {
-      title: "TaskFlow Pro",
-      description: "Enterprise-grade project management tool featuring drag-and-drop boards, analytics, and team collaboration.",
-      tech: ["TypeScript", "Express", "PostgreSQL", "MUI"],
-      link: "#",
-      github: "#",
-      image: "bg-3"
+      title: "2048 Game",
+      description: "A sleek, interactive web-based implementation of the classic 2048 puzzle game with smooth animations.",
+      tech: ["HTML5", "CSS3", "JavaScript", "Next.js"],
+      link: "https://2048-new-game.netlify.app/",
+      github: "https://github.com/SindhujaDeveloper/2048-game",
+      image: "/2048_game_thumbnail.png"
     }
   ];
 
@@ -93,8 +102,8 @@ export default function Projects() {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    show: { 
-      opacity: 1, 
+    show: {
+      opacity: 1,
       y: 0,
       transition: {
         type: "spring" as const,
@@ -116,7 +125,7 @@ export default function Projects() {
           <span className="section-subtitle">Portfolio Highlights</span>
           <h3 className="section-title">Latest Projects</h3>
         </motion.div>
-        
+
         <motion.div
           variants={containerVariants}
           initial="hidden"

@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiTypescript, SiRedux, SiTailwindcss, SiGit } from "react-icons/si";
+import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiTypescript, SiRedux, SiTailwindcss, SiGit, SiDocker } from "react-icons/si";
 import { motion } from "framer-motion";
 
 export default function Skills() {
@@ -18,6 +18,7 @@ export default function Skills() {
     { title: "Redux", desc: "State Management", icon: <SiRedux color="#764abc" />, bg: 'rgba(118, 74, 188, 0.1)' },
     { title: "Tailwind CSS", desc: "Styling Framework", icon: <SiTailwindcss color="#06b6d4" />, bg: 'rgba(6, 182, 212, 0.1)' },
     { title: "Git", desc: "Version Control", icon: <SiGit color="#f05032" />, bg: 'rgba(240, 80, 50, 0.1)' },
+    { title: "Docker", desc: "Containerization", icon: <SiDocker color="#2496ed" />, bg: 'rgba(36, 150, 237, 0.1)' },
   ];
 
   const slides = [...skills, ...skills];
@@ -61,13 +62,13 @@ export default function Skills() {
             {slides.map((s, idx) => (
               <SwiperSlide key={idx} style={{ width: 260 }}>
                 <motion.div 
-                  className="skill-card glass-card p-4 text-center"
+                  className="skill-card glass-card p-3 text-center"
                   whileHover={{ y: -5 }}
                 >
                   <div 
-                    className="skill-icon-wrapper mb-3 mx-auto" 
+                    className="skill-icon-wrapper mb-2 mx-auto" 
                   >
-                    <div className="skill-icon fs-2 d-flex align-items-center justify-content-center h-100">
+                    <div className="skill-icon d-flex align-items-center justify-content-center h-100">
                       {s.icon}
                     </div>
                   </div>
