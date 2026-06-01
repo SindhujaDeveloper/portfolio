@@ -7,7 +7,7 @@ export default function About() {
     e.preventDefault();
     // Update URL to experience/skills section
     window.history.pushState(null, "", "#experience");
-    
+
     // Smooth scroll to experience section
     const expEl = document.getElementById("experience");
     if (expEl) {
@@ -33,7 +33,7 @@ export default function About() {
           <h2 className="section-title">About Me</h2>
           <h4 className="about-subtitle">Let me introduce myself!</h4>
           <p className="about-copy">
-            I'm a passionate MERN Stack developer with expertise in building
+            I'm a passionate Software Developer with expertise in building
             dynamic and responsive web applications. I enjoy turning ideas into
             polished interfaces and reliable backends using the MERN stack.
           </p>

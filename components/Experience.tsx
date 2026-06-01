@@ -10,7 +10,7 @@ export default function Experience() {
       role: "Senior Software Developer",
       company: "Coretopia Technologies",
       period: "October 2025 - Present",
-      description: "Building responsive and performant web applications focusing on React, modern Javascript, and seamless user experiences. Collaborating closely with teams to deliver high-quality digital solutions.",
+      description: "Building responsive and performant web applications focusing on React, modern JavaScript, and seamless user experiences. Experienced in Docker-based containerization, application deployments, CI/CD workflows, and collaborating with cross-functional teams to deliver scalable, high-quality digital solutions.",
       icon: <FaBriefcase />,
       current: true
     },
@@ -51,8 +51,8 @@ export default function Experience() {
 
   return (
     <section className="section experience-section container" id="experience">
-       <div className="pt-5">
-        <motion.div 
+      <div className="pt-5">
+        <motion.div
           className="experience-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,8 +64,8 @@ export default function Experience() {
 
         <div className="timeline-container">
           {experiences.map((exp, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="timeline-item"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -73,7 +73,7 @@ export default function Experience() {
               transition={{ duration: 0.5, delay: index * 0.15 }}
             >
               <div className="timeline-marker">
-                <motion.div 
+                <motion.div
                   className="timeline-icon"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
@@ -82,7 +82,7 @@ export default function Experience() {
                 {index < experiences.length - 1 && <div className="timeline-line"></div>}
               </div>
               <div className="timeline-content">
-                <motion.div 
+                <motion.div
                   className="timeline-card"
                   whileHover={{ y: -8 }}
                 >
@@ -103,7 +103,7 @@ export default function Experience() {
       <div className="section-divider" style={{ margin: '80px auto' }}></div>
 
       <div className="py-5">
-        <motion.div 
+        <motion.div
           className="experience-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -117,7 +117,7 @@ export default function Experience() {
           <Row className="g-4">
             {education.map((edu, index) => (
               <Col key={index} md={6} className="">
-                <motion.div 
+                <motion.div
                   className="education-card-wrapper h-100"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -130,12 +130,12 @@ export default function Experience() {
                       {edu.icon}
                     </div>
                     <div className="ps-3">
-                    <h5 className="exp-role">{edu.degree}</h5>
-                    <div className="exp-meta mb-0">
-                      <span className="company-name">{edu.institution}</span>
-                      <span className="period-divider"></span>
-                      <span className="period-text">{edu.period}</span>
-                    </div>
+                      <h5 className="exp-role">{edu.degree}</h5>
+                      <div className="exp-meta mb-0">
+                        <span className="company-name">{edu.institution}</span>
+                        <span className="period-divider"></span>
+                        <span className="period-text">{edu.period}</span>
+                      </div>
                     </div>
                     {/* <p className="exp-desc">{edu.description}</p> */}
                   </div>

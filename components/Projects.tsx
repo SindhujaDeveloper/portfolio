@@ -32,7 +32,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             src={project.image}
             alt={project.title}
             className="w-100 h-100"
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', opacity: 0.6 }}
           />
         ) : (
           <div

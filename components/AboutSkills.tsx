@@ -16,7 +16,7 @@ export default function AboutSkills() {
       <Container>
         <Row className="align-items-center g-5">
           <Col lg={6}>
-            <motion.div 
+            <motion.div
               className="about-visual float-anim"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -32,16 +32,16 @@ export default function AboutSkills() {
                   </video>
                 </div>
               </div>
-              <motion.div 
+              <motion.div
                 className="experience-badge-modern glass-card p-3"
                 whileHover={{ scale: 1.05 }}
               >
                 <span className="badge-number">05</span>
-                <span className="badge-text">Years of<br/>Experience</span>
+                <span className="badge-text">Years of<br />Experience</span>
               </motion.div>
             </motion.div>
           </Col>
-          
+
           <Col lg={6}>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -51,18 +51,18 @@ export default function AboutSkills() {
             >
               <span className="section-subtitle">A Bit About Me</span>
               <h2 className="section-title">Turning Vision Into <span className="accent-text">Reality</span></h2>
-              
+
               <div className="about-description mt-4">
                 <p className="text-secondary fs-5 leading-relaxed text-justify">
-                  I'm a dedicated MERN Stack Developer with a passion for creating high-performance, 
-                  scalable web solutions. With over 6 years of experience in the industry, 
+                  I'm a dedicated Software Developer with a passion for creating high-performance,
+                  scalable web solutions. With over 5 years of experience in the industry,
                   I've mastered the art of building seamless user experiences from concept to deployment.
                 </p>
-                
+
                 <Row className="stats-grid mt-3 g-4">
                   {stats.map((stat, i) => (
                     <Col key={i} xs={4}>
-                      <motion.div 
+                      <motion.div
                         className="stat-item text-center"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export default function AboutSkills() {
                     </Col>
                   ))}
                 </Row>
-                
+
                 {/* <div className="d-flex gap-3 mt-5">
                   <Button className="glow-btn d-flex align-items-center gap-2">
                     <FaUserAlt size={14} /> My Story
